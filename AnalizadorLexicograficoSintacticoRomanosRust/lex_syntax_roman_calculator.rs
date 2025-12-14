@@ -193,23 +193,15 @@ fn parse_primary(tokens: &[Token], pos: usize) -> (i32, usize) {
         _ => panic!("Error sintáctico: token inválido"),
     }
 }
-
 fn main() {
-
     let mut expr = String::new();
-    println!("Por favor ingrese una expresión aritmética para números romanos:");
-    
+    println!("Por favor ingrese una expresión aritmética para números romanos:"); 
     io::stdin()
         .read_line(&mut expr)
         .expect("Fallo");
-
-
     let tokens = lex(&expr.trim());
-
     println!("Tokens: {:?}", tokens);
-
     let (resultado, _) = parse_expr(&tokens);
-
     println!("Resultado entero: {}", resultado);
     println!("Resultado romano: {}", int_to_roman(resultado));
 }
